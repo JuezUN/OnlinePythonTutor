@@ -1335,7 +1335,7 @@ function executeCodeFromScratch() {
     return;
   }
 
-  rawInputLst = []; // reset!
+  //rawInputLst = []; // reset!
   executeCode();
 }
 

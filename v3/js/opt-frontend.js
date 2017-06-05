@@ -714,4 +714,9 @@ $(document).ready(function() {
     var urlStr = $.param.fragment('live.html', myArgs, 2 /* clobber all */);
     window.open(urlStr); // open in new tab
   });
+
+  $("#inputTextArea").change(function(){
+    var input = jQuery(this).val().split("\n");
+    rawInputLst = input;
+  });
 });
