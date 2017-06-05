@@ -1344,7 +1344,11 @@ function executeCodeWithTextAreaInput(){
     setFronendError(["Type in some code to visualize."]);
     return;
   }
-  rawInputLst = $("#inputTextArea").val().split("\n");
+  var inputText = $("#inputTextArea").val();
+  if(inputText == "")
+    rawInputLst = [];
+  else
+    rawInputLst = inputText.split("\n");
   executeCode();
 }
 
