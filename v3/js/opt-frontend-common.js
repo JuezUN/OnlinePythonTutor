@@ -1030,7 +1030,7 @@ function genericOptFrontendReady() {
 
   $("#embedLinkDiv").hide();
   $("#executeBtn").attr('disabled', false);
-  $("#executeBtn").click(executeCodeFromScratch);
+  $("#executeBtn").click(executeCodeWithTextAreaInput);
 
   // for Versions 1 and 2, initialize here. But for version 3+, dynamically
   // generate a survey whenever the user successfully executes a piece of code
@@ -1336,6 +1336,19 @@ function executeCodeFromScratch() {
   }
 
   rawInputLst = []; // reset!
+  executeCode();
+}
+
+function executeCodeWithTextAreaInput(){
+  if ($.trim(pyInputGetValue()) == '') {
+    setFronendError(["Type in some code to visualize."]);
+    return;
+  }
+  var inputText = $("#inputTextArea").val();
+  if(inputText == "")
+    rawInputLst = [];
+  else
+    rawInputLst = inputText.split("\n");
   executeCode();
 }
 
