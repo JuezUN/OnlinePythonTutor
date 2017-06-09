@@ -77,7 +77,7 @@ if (window.location.protocol === 'https:') {
   var JAVA_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_java_jsonp'; // for deployment
   var RUBY_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_ruby_jsonp'; // for deployment
   var C_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_c_jsonp'; // for deployment
-  var CPP_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_cpp_jsonp'; // for deployment
+  var CPP_JSONP_ENDPOINT = "http://127.0.0.1:5001/exec_cpp_jsonp"; //'http://104.237.139.253:3000/exec_cpp_jsonp'; // for deployment
 }
 
 
@@ -1700,7 +1700,8 @@ function executeCodeAndCreateViz(codeToExec,
         jsonp: "callback",
         dataType: "jsonp",
         data: {user_script : codeToExec,
-               options_json: JSON.stringify(backendOptionsObj)},
+               options_json: JSON.stringify(backendOptionsObj),
+               raw_input_json: JSON.stringify(rawInputLst)},
         success: execCallback,
       });
     } else {

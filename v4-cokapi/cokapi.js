@@ -35,7 +35,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // Run with an 'https' command-line flag to use https (must have
 // the proper certificate and key files, though)
 
-var IS_DEBUG = false;
+var IS_DEBUG = true;
 
 var PRODUCTION_PORT = 3000;
 var PRODUCTION_HTTPS_PORT = 8001;
@@ -233,6 +233,8 @@ app.get('/exec_cpp_jsonp', exec_cpp_handler.bind(null, true, true));
 function exec_cpp_handler(useCPP /* use bind first */, useJSONP /* use bind first */, req, res) {
   var usrCod = req.query.user_script;
 
+  console.log(req.query.raw_input_json);
+
   var exeFile;
   var args = [];
 
@@ -261,8 +263,8 @@ var https = require('https');
 var fs = require('fs');
 
 var options = {
-  key: fs.readFileSync('cokapi.com.key'),
-  cert: fs.readFileSync('cokapi.com-BUNDLE.crt')
+  key: "",//fs.readFileSync('cokapi.com.key'),
+  cert: ""//fs.readFileSync('cokapi.com-BUNDLE.crt')
 };
 
 var args = process.argv.slice(2);
