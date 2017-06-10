@@ -262,13 +262,14 @@ function exec_cpp_handler(useCPP /* use bind first */, useJSONP /* use bind firs
 var https = require('https');
 var fs = require('fs');
 
-var options = {
-  key: "",//fs.readFileSync('cokapi.com.key'),
-  cert: ""//fs.readFileSync('cokapi.com-BUNDLE.crt')
-};
 
 var args = process.argv.slice(2);
 if (args.length > 0 && args[0] === 'https') {
+  var options = {
+    key: fs.readFileSync('cokapi.com.key'),
+    cert: fs.readFileSync('cokapi.com-BUNDLE.crt')
+  };
+
   var server = https.createServer(options, app).listen(
     IS_DEBUG ? DEBUG_PORT : PRODUCTION_HTTPS_PORT,
     function() {
