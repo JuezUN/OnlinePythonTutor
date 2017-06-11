@@ -52,11 +52,11 @@ var util = require('util');
 // spawn a shell
 // http://nodejs.org/api/child_process.html#child_process_child_process_execfile_file_args_options_callback
 
-var TIMEOUT_SECS = 15;
+var TIMEOUT_SECS = 30;
 
 var MAX_BUFFER_SIZE = 10 * 1024 * 1024;
 
-var MEM_LIMIT = "512M";
+var MEM_LIMIT = "1024M";
 
 
 // bind() res and useJSONP before using
@@ -232,8 +232,8 @@ app.get('/exec_cpp_jsonp', exec_cpp_handler.bind(null, true, true));
 
 function exec_cpp_handler(useCPP /* use bind first */, useJSONP /* use bind first */, req, res) {
   var usrCod = req.query.user_script;
+  var userInput = JSON.parse(req.query.raw_input_json).join("\n");
 
-  console.log(req.query.raw_input_json);
 
   var exeFile;
   var args = [];
@@ -244,7 +244,8 @@ function exec_cpp_handler(useCPP /* use bind first */, useJSONP /* use bind firs
             'python',
             '/tmp/opt-cpp-backend/run_cpp_backend.py',
             usrCod,
-            useCPP ? 'cpp' : 'c');
+            useCPP ? 'cpp' : 'c',
+            userInput);
 
   child_process.execFile(exeFile, args,
                          {timeout: TIMEOUT_SECS * 1000 /* milliseconds */,
