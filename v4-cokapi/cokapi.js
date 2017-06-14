@@ -35,9 +35,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // Run with an 'https' command-line flag to use https (must have
 // the proper certificate and key files, though)
 
-var IS_DEBUG = true;
+var IS_DEBUG = false;
 
-var PRODUCTION_PORT = 3000;
+var PRODUCTION_PORT = 3001;
 var PRODUCTION_HTTPS_PORT = 8001;
 var DEBUG_PORT = 5001;
 
@@ -56,7 +56,7 @@ var TIMEOUT_SECS = 30;
 
 var MAX_BUFFER_SIZE = 10 * 1024 * 1024;
 
-var MEM_LIMIT = "1024M";
+var MEM_LIMIT = "512M";
 
 
 // bind() res and useJSONP before using
