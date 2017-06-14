@@ -54,8 +54,10 @@ function iframeHandleUncaughtException(trace) {
 
 function toggleUserInput(){
   var userInputDiv = document.getElementById('inputArea');
-  var button = document.getElementById("shower");
-  if(userInputDiv.style.display === 'none') {
+  var button = document.getElementById("show-hide-input-button");
+
+  var inputIsHidden = (userInputDiv.style.display === 'none');
+  if( inputIsHidden ){
     userInputDiv.style.display = 'block';
     button.innerText = "Hide input";
   }else{
@@ -102,7 +104,7 @@ $(document).ready(function() {
 
   // David Pritchard's code for resizeContainer option ...
   var resizeContainer = ($.bbq.getState('resizeContainer') == 'true');
-    
+
   if (resizeContainer) {
       function findContainer() {
           var ifs = window.top.document.getElementsByTagName("iframe");
@@ -114,9 +116,9 @@ $(document).ready(function() {
               }
           }
       }
-      
+
       var container = findContainer();
-      
+
       function resizeContainerNow() {
           $(container).height($("html").height());
       };
@@ -188,6 +190,7 @@ $(document).ready(function() {
     myVisualizer.redrawConnectors();
   });
 
+  // set user input into the text area
   if(rawInputLst){
     $("#userInput").val(rawInputLst.join("\n"));
   }
