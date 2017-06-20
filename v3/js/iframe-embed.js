@@ -52,7 +52,19 @@ function iframeHandleUncaughtException(trace) {
   $("#vizDiv").html(htmlspecialchars(excMsg));
 }
 
+function toggleUserInput(){
+  var userInputDiv = document.getElementById('inputArea');
+  var button = document.getElementById("show-hide-input-button");
 
+  var inputIsHidden = (userInputDiv.style.display === 'none');
+  if( inputIsHidden ){
+    userInputDiv.style.display = 'block';
+    button.innerText = "Hide input";
+  }else{
+    userInputDiv.style.display = 'none';
+    button.innerText = "Show input";
+  }
+}
 
 $(document).ready(function() {
   var queryStrOptions = getQueryStringOptions();
@@ -63,6 +75,7 @@ $(document).ready(function() {
   var heapPrimitivesBool = (queryStrOptions.heapPrimitives == 'true');
   var textRefsBool = (queryStrOptions.textReferences == 'true');
   var cumModeBool = (queryStrOptions.cumulative == 'true');
+  rawInputLst = queryStrOptions.rawInputLst;
 
   // these two are deprecated
   var drawParentPointerBool = (queryStrOptions.drawParentPointers == 'true');
@@ -91,7 +104,7 @@ $(document).ready(function() {
 
   // David Pritchard's code for resizeContainer option ...
   var resizeContainer = ($.bbq.getState('resizeContainer') == 'true');
-    
+
   if (resizeContainer) {
       function findContainer() {
           var ifs = window.top.document.getElementsByTagName("iframe");
@@ -103,9 +116,9 @@ $(document).ready(function() {
               }
           }
       }
-      
+
       var container = findContainer();
-      
+
       function resizeContainerNow() {
           $(container).height($("html").height());
       };
@@ -177,6 +190,10 @@ $(document).ready(function() {
     myVisualizer.redrawConnectors();
   });
 
+  // set user input into the text area
+  if(rawInputLst){
+    $("#userInput").val(rawInputLst.join("\n"));
+  }
 
-  executeCodeFromScratch(); // finally, execute code and display visualization
+  executeCode(); // finally, execute code and display visualization
 });
