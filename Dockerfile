@@ -8,4 +8,5 @@ COPY . .
 
 EXPOSE 8003
 
-CMD [ "python", "./v3/bottle_server.py" ]
+WORKDIR /usr/src/app/v3
+CMD [ "python", "bottle_server.py" ]
