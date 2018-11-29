@@ -65,19 +65,19 @@ var cpp_backend_script = 'web_exec_cpp.py';
 // these are the REAL endpoints, accessed via jsonp. code is in ../../v4-cokapi/
 if (window.location.protocol === 'https:') {
   // my certificate for https is registered via cokapi.com, so use it for now:
-  var JS_JSONP_ENDPOINT = 'https://cokapi.com:8001/exec_js_jsonp';
-  var TS_JSONP_ENDPOINT = 'https://cokapi.com:8001/exec_ts_jsonp';
-  var JAVA_JSONP_ENDPOINT = 'https://cokapi.com:8001/exec_java_jsonp';
-  var RUBY_JSONP_ENDPOINT = 'https://cokapi.com:8001/exec_ruby_jsonp';
-  var C_JSONP_ENDPOINT = 'https://cokapi.com:8001/exec_c_jsonp';
-  var CPP_JSONP_ENDPOINT = 'https://cokapi.com:8001/exec_cpp_jsonp';
+  var JS_JSONP_ENDPOINT = 'https://to-be-replaced.com:8080/exec_js_jsonp';
+  var TS_JSONP_ENDPOINT = 'https://to-be-replaced.com:8080/exec_ts_jsonp';
+  var JAVA_JSONP_ENDPOINT = 'https://to-be-replaced.com:8080/exec_java_jsonp';
+  var RUBY_JSONP_ENDPOINT = 'https://to-be-replaced.com:8080/exec_ruby_jsonp';
+  var C_JSONP_ENDPOINT = 'https://to-be-replaced.com:8080/exec_c_jsonp';
+  var CPP_JSONP_ENDPOINT = 'https://to-be-replaced.com:8080/exec_cpp_jsonp';
 } else {
-  var JS_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_js_jsonp'; // for deployment
-  var TS_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_ts_jsonp'; // for deployment
-  var JAVA_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_java_jsonp'; // for deployment
-  var RUBY_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_ruby_jsonp'; // for deployment
-  var C_JSONP_ENDPOINT = 'http://104.237.139.253:3000/exec_c_jsonp'; // for deployment
-  var CPP_JSONP_ENDPOINT = "http://uncode.unal.edu.co/cokapi/exec_cpp_jsonp"; // for deployment
+  var JS_JSONP_ENDPOINT = 'http://to-be-replaced.com:8080/exec_js_jsonp'; // for deployment
+  var TS_JSONP_ENDPOINT = 'http://to-be-replaced.com:8080/exec_ts_jsonp'; // for deployment
+  var JAVA_JSONP_ENDPOINT = 'http://to-be-replaced.com:8080/exec_java_jsonp'; // for deployment
+  var RUBY_JSONP_ENDPOINT = 'http://to-be-replaced.com:8080/exec_ruby_jsonp'; // for deployment
+  var C_JSONP_ENDPOINT = 'http://to-be-replaced.com:8080/exec_c_jsonp'; // for deployment
+  var CPP_JSONP_ENDPOINT = "http://to-be-replaced.com:8080/exec_cpp_jsonp"; // for deployment
 }
 
 

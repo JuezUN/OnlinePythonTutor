@@ -18,6 +18,7 @@ import json
 import pg_logger
 import urllib
 import urllib2
+import os
 
 # dummy routes for testing only
 @route('/web_exec_<name:re:.+>.py')
@@ -111,7 +112,17 @@ if n_fail == 0:
   the_page = response.read()
   return the_page
 
+def replace_urls():
+    with open('js/opt-frontend-common.js', 'r') as content_file:
+        content = content_file.read()
+
+    endpoint = os.getenv("COKAPI_ENDPOINT", "uncode.unal.edu.co/cokapi")
+    content = content.replace("to-be-replaced.com:8080", endpoint)
+
+    with open('js/opt-frontend-common.js', "w") as content_file:
+        content_file.write(content)
 
 if __name__ == "__main__":
     #run(host='localhost', port=8080, reloader=True)
+    replace_urls()
     run(host='0.0.0.0', port=8003, reloader=True) # make it externally visible - DANGER this is very insecure since there's no sandboxing!
