@@ -554,15 +554,15 @@ ExecutionVisualizer.prototype.render = function() {
 
   if (this.params.editCodeBaseURL) {
     // kinda kludgy
-    var pyVer = '2'; // default
+    var pyVer = '3'; // default
     if (this.params.lang === 'js') {
       pyVer = 'js';
     } else if (this.params.lang === 'ts') {
       pyVer = 'ts';
     } else if (this.params.lang === 'java') {
       pyVer = 'java';
-    } else if (this.params.lang === 'py3') {
-      pyVer = '3';
+    } else if (this.params.lang === 'py2') {
+      pyVer = '2';
     } else if (this.params.lang === 'c') {
       pyVer = 'c';
     } else if (this.params.lang === 'cpp') {
@@ -590,7 +590,7 @@ ExecutionVisualizer.prototype.render = function() {
     } else if (this.params.lang === 'java') {
       this.domRoot.find('#langDisplayDiv').html('Java');
     } else if (this.params.lang === 'py2') {
-      this.domRoot.find('#langDisplayDiv').html('Python 2.7');
+      this.domRoot.find('#langDisplayDiv').html('Python 3.3');
     } else if (this.params.lang === 'py3') {
       this.domRoot.find('#langDisplayDiv').html('Python 3.3');
     } else if (this.params.lang === 'c') {

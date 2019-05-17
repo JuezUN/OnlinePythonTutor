@@ -1,4 +1,4 @@
-FROM python:2
+FROM python:3
 
 WORKDIR /usr/src/app
 
@@ -9,4 +9,4 @@ COPY . .
 EXPOSE 8003
 
 WORKDIR /usr/src/app/v3
-CMD [ "python", "bottle_server.py" ]
+CMD [ "python3", "bottle_server.py" ]
