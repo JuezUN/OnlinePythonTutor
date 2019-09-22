@@ -1,0 +1,1 @@
+docker build --build-arg PYTHON=$PYTHON -f $DOCKERFILE_PATH -t $IMAGE_NAME .
