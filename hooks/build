@@ -1,3 +1,2 @@
 #!/bin/bash
-echo $PYTHON_IMG
-docker build --build-arg PYTHON $PYTHON_IMG -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+docker build --build-arg PYTHON=$PYTHON_IMG -t $IMAGE_NAME .
