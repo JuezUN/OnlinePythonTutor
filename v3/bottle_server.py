@@ -13,7 +13,6 @@
 # compatibility from 2.x to 3.x Ii was running from /v3/).
 
 from bottle import route, get, request, run, template, static_file
-
 try:
     from StringIO import StringIO  # For Python 2
 except ImportError:

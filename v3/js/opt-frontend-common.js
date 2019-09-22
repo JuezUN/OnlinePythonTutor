@@ -40,8 +40,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 // -rwxr-xr-x 1 pgbovine pgbovine 2.5K Jul  5 22:46 web_exec_py2.py*
 // (most notably, only the owner of the file should have write
 //  permissions)
-// var python2_backend_script = 'web_exec_py2.py';
-// var python3_backend_script = 'web_exec_py3.py';
+//var python2_backend_script = 'web_exec_py2.py';
+//var python3_backend_script = 'web_exec_py3.py';
 
 // uncomment below if you're running on Google App Engine using the built-in app.yaml
 var python2_backend_script = 'exec_py2';
