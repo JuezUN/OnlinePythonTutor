@@ -1,4 +1,4 @@
-ARG PYTHON=python:2
+ARG PYTHON=python:3
 FROM $PYTHON
 
 WORKDIR /usr/src/app
