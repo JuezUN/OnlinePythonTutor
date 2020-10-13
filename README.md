@@ -33,7 +33,7 @@ Check the [iframe embedding documentation][embedding_path] for a better understa
 
 However, it can be hard to run your own visualizer locally for non-Python languages, since it is necessary to deploy
  a service called `cokapi`, check the [documentation][cokapi_url]. This service also needs a backend to run
- C/C++ code, this is located in the repository [opt-cpp-backend][opt_cpp_backend].
+ C/C++ code, this is located in the repository [opt-cpp-backend][opt_cpp_backend_url].
  
 To understand more how to deploy this service, check this [script][deploy_cokapi_url], which automatically deploys it
  when UNCode is deployed automatically.
